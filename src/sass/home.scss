@@ -25,6 +25,20 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 99;
   }
+  .loading {
+    z-index: 9998;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -15px;
+    background:url('./assets/loading.svg');
+    background-size: contain;
+    opacity: 1;
+    border-radius: 7px;
+    animation: circle 2s ease infinite;
+  }
   .slide-bar {
     position: fixed;
     width: 70px;
@@ -41,6 +55,7 @@
         padding-top: 20px;
         display: flex;
         flex-direction: column;
+        position: relative;
         .preDay,.nextDay,.today {
             height: 30px;
             line-height: 30px;
@@ -49,9 +64,32 @@
             margin-bottom: 10px;
             text-align: center;
         }
+        .github {
+            position: absolute;
+            bottom: 40px;
+            left: 17px;
+            height: 35px;
+            width: 35px;
+            background: url('./assets/github.svg') no-repeat;
+            background-size: contain;
+            &>a {
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+        }
     }
   }
   .slide-bar-show {
     transform: translate3D(0, 0, 0);
   }
 }
+
+@keyframes circle {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
