@@ -36,7 +36,6 @@ device.weixin = /MicroMessenger/i.test(ua);
 // Pixel Ratio
 device.pixelRatio = window.devicePixelRatio || 1;
 
-device.wnl = /wnl/i.test(ua);
 
 device.appVersion = /^\d.*\d$/ig.test(ua.split(' ').pop()) ? ua.split(' ').pop() : '1.0.0';
 device.sysVersion = GetIOSVersion() || getAndroidVersion();
