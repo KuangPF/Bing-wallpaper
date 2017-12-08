@@ -8,7 +8,7 @@
 #### build
     npm run build
 #### 效果
-![image](https://github.com/KuangPF/Bing-wallpaper/blob/master/src/assets/bingWallpaper) 
+![image](https://github.com/KuangPF/Bing-wallpaper/blob/master/src/assets/img/bingWallpaper.gif) 
 #### api
 ##### //bing.com/HPImageArchive.aspx?format=js&idx=0&n=1
 ###### 参数
