@@ -89,6 +89,7 @@ export default {
       this.isShowLoading = true;
       let idx = localStorage.getItem("preDay_idx");
       if (idx < 2) this.isShowNext = false;
+      if(idx>7) idx = 7;
       if (idx != 1) this.isShowToday = true;
       else this.isShowToday = false;
       idx--;
