@@ -3,6 +3,15 @@
         <div class="bing-wallpaper-container">
             <img :src="bingWallpaperUrl">
         </div>
+        <div class="icon-menu" @click="menuShow"></div>
+        <div class="mask" v-if="maskShow" @click="menuHide"></div>
+        <div class="slide-bar" :class="{'slide-bar-show' : slideBarShow==1}">
+        </div>
+        <!-- <div class="switch-congtent">
+            <div class="preDay" @click="getPreDay">前一天</div>
+            <div class="nextDay" @click="getNextDay">后一天</div>
+            <div class="today" @click="getToday">今天</div>
+        </div> -->
     </div>
 </template>
 
@@ -13,32 +22,36 @@ import device from "../utils/utils";
 export default {
   data() {
     return {
-      bingWallpaperUrl: ""
+      bingWallpaperUrl: "",
+      maskShow: false,
+      slideBarShow: 0
     };
   },
   mounted() {
     let _this = this;
-    getBingWallpaper().then(res => {
-      let baseUrl = "http://www.bing.com/";
-      let bingWallPaperUlr = baseUrl + res.data.images[0].url;
-      console.log(res);
-      /* 判断设备 */
-      if (device.android || device.ios) {
-        _this.bingWallpaperUrl = bingWallPaperUlr.replace(
-          "1920x1080",
-          "720x1280"
-        );
-      } else if (device.ipad) {
-        _this.bingWallpaperUrl = bingWallPaperUlr.replace(
-          "1920x1080",
-          "1366x768"
-        );
-      } else {
-        _this.bingWallpaperUrl = bingWallPaperUlr;
-      }
+    getBingWallpaper(0).then(res => {
+      _this.bingWallpaperUrl = res;
     });
   },
-  methods: {}
+  methods: {
+    menuShow() {
+      this.maskShow = true;
+      this.slideBarShow = 1;
+    },
+    menuHide() {
+      this.maskShow = false;
+      this.slideBarShow = 0;
+    },
+    getPreDay() {
+      getBingWallpaper(1).then(res => {
+        console.log(res);
+        console.log(res);
+        this.bingWallpaperUrl = res;
+      });
+    },
+    getNextDay() {},
+    getToday() {}
+  }
 };
 </script>
 
