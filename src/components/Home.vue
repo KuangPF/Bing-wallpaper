@@ -3,6 +3,8 @@
         <div class="bing-wallpaper-container">
             <img :src="bingWallpaperUrl">
         </div>
+        <div class="picDesc">{{bingWallpaperDesc}}</div>
+        <div class="copyright">{{bingWallpaperCopyright}}</div>
         <div class="icon-menu" @click="menuShow"></div>
         <div class="mask" v-if="maskShow" @click="menuHide"></div>
         <div class="loading" v-if="isShowLoading"></div>
@@ -30,13 +32,17 @@ export default {
       isShowToday: false,
       maskShow: false,
       isShowLoading: false,
+      bingWallpaperDesc: "",
+      bingWallpaperCopyright: "",
       slideBarShow: 0
     };
   },
   mounted() {
     let _this = this;
     getBingWallpaper(0).then(res => {
-      _this.bingWallpaperUrl = res;
+      _this.bingWallpaperUrl = res.bingWallPaperUlr;
+      _this.bingWallpaperDesc = res.bingWallPaperDesc;
+      _this.bingWallpaperCopyright = res.bingWallPaperCopyright;
     });
     localStorage.removeItem("preDay_idx");
   },
@@ -63,8 +69,10 @@ export default {
       else this.isShowToday = false;
       localStorage.setItem("preDay_idx", idx);
       getBingWallpaper(idx).then(res => {
+        this.bingWallpaperUrl = res.bingWallPaperUlr;
+        this.bingWallpaperDesc = res.bingWallPaperDesc;
+        this.bingWallpaperCopyright = res.bingWallPaperCopyright;
         this.isShowLoading = false;
-        this.bingWallpaperUrl = res;
       });
     },
     getNextDay() {
@@ -76,8 +84,10 @@ export default {
       idx--;
       localStorage.setItem("preDay_idx", idx);
       getBingWallpaper(idx).then(res => {
+        this.bingWallpaperUrl = res.bingWallPaperUlr;
+        this.bingWallpaperDesc = res.bingWallPaperDesc;
+        this.bingWallpaperCopyright = res.bingWallPaperCopyright;
         this.isShowLoading = false;
-        this.bingWallpaperUrl = res;
       });
     },
     getToday() {
@@ -86,8 +96,10 @@ export default {
       this.isShowToday = false;
       this.isShowNext = false;
       getBingWallpaper(0).then(res => {
+        this.bingWallpaperUrl = res.bingWallPaperUlr;
+        this.bingWallpaperDesc = res.bingWallPaperDesc;
+        this.bingWallpaperCopyright = res.bingWallPaperCopyright;
         this.isShowLoading = false;
-        this.bingWallpaperUrl = res;
       });
     }
   }

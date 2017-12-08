@@ -7,6 +7,28 @@
         width: 100%;
         height: 100%; */
   }
+  .picDesc {
+    position: absolute;
+    bottom: 80px;
+    margin: auto;
+    width: 80%;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  .copyright {
+    position: absolute;
+    bottom: 20px;
+    margin: auto;
+    width: 80%;
+    left: 0;
+    right: 0;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+  }
   .icon-menu {
     position: fixed;
     height: 20px;
@@ -33,7 +55,7 @@
     left: 50%;
     top: 50%;
     margin-top: -15px;
-    background:url('./assets/img/loading.svg');
+    background: url('./assets/img/loading.svg');
     background-size: contain;
     opacity: 1;
     border-radius: 7px;
@@ -50,34 +72,36 @@
     z-index: 100;
     transition: all 500ms cubic-bezier(0.23, 1, 0.32, 1);
     .switch-congtent {
-        width: 100%;
-        height: 100%;
-        padding-top: 20px;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        .preDay,.nextDay,.today {
-            height: 30px;
-            line-height: 30px;
-            color: #fff;
-            background: #919191;
-            margin-bottom: 10px;
-            text-align: center;
+      width: 100%;
+      height: 100%;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      .preDay,
+      .nextDay,
+      .today {
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        background: #919191;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .github {
+        position: absolute;
+        bottom: 40px;
+        left: 17px;
+        height: 35px;
+        width: 35px;
+        background: url('./assets/img/github.svg') no-repeat;
+        background-size: contain;
+        &>a {
+          display: block;
+          height: 100%;
+          width: 100%;
         }
-        .github {
-            position: absolute;
-            bottom: 40px;
-            left: 17px;
-            height: 35px;
-            width: 35px;
-            background: url('./assets/img/github.svg') no-repeat;
-            background-size: contain;
-            &>a {
-                display: block;
-                height: 100%;
-                width: 100%;
-            }
-        }
+      }
     }
   }
   .slide-bar-show {
@@ -86,10 +110,10 @@
 }
 
 @keyframes circle {
-    0% {
-      transform: rotate(0);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0);
   }
+  100% {
+    transform: rotate(360deg);
+  }
+}
