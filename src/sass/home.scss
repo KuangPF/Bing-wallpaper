@@ -29,6 +29,22 @@
     color: #fff;
     text-align: center;
   }
+  .toast {
+      background: #000;
+      position: absolute;
+      bottom: 40px;
+      margin: auto;
+      width: 100px;
+      height: 30px;
+      line-height: 30px;
+      left: 0;
+      right: 0;
+      font-size: 13px;
+      color: #fff;
+      text-align: center;
+      border-radius: 7px;
+      z-index: 101;
+  }
   .icon-menu {
     position: fixed;
     height: 20px;

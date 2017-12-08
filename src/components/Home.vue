@@ -5,6 +5,7 @@
         </div>
         <div class="picDesc">{{bingWallpaperDesc}}</div>
         <div class="copyright">{{bingWallpaperCopyright}}</div>
+        <div class="toast" v-if="isShowToast">{{toastInfo}}</div>
         <div class="icon-menu" @click="menuShow"></div>
         <div class="mask" v-if="maskShow" @click="menuHide"></div>
         <div class="loading" v-if="isShowLoading"></div>
@@ -34,6 +35,8 @@ export default {
       isShowLoading: false,
       bingWallpaperDesc: "",
       bingWallpaperCopyright: "",
+      toastInfo: "暂只支持7天~",
+      isShowToast: false,
       slideBarShow: 0
     };
   },
@@ -65,6 +68,13 @@ export default {
       }
       idx++;
       if (idx > 0) this.isShowNext = true;
+      if (idx > 7) {
+        this.isShowToast = true;
+        let _this = this;
+        setTimeout(function() {
+          _this.isShowToast = false;
+        }, 1000);
+      }
       if (idx != 0) this.isShowToday = true;
       else this.isShowToday = false;
       localStorage.setItem("preDay_idx", idx);
