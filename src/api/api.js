@@ -10,7 +10,7 @@ export function getBingWallpaper(idx) {
 
   function getAxios() {
     return new Promise(function (resolve, reject) {
-      axios.get('//bing.com/HPImageArchive.aspx?format=js&idx=' + idx + '&n=1')
+      axios.get('api/HPImageArchive.aspx?format=js&idx=' + idx + '&n=1')
         .then(function (res) {
           bingWallPaperUlr = baseUrl + res.data.images[0].url;
           bingWallPaperDesc = res.data.images[0].copyright.substring(0,res.data.images[0].copyright.indexOf("("));
