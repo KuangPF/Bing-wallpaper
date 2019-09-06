@@ -60,4 +60,5 @@ https://bing.com/HPImageArchive.aspx?format=js&idx=0&n=1
 然后壁纸地址为: `https://www.bing.com/az/hprichbg/rb/SibeliusMonument_ZH-CN8903164725_1920x1080.jpg`
 
 获取不同分辨率的壁纸，只需将ulr中对应的分辨率替换即可，支持的分辨率从如下：
+
 `['1920x1080', '1280x768', '1366x768', '1024x768', '800x600', '800x480', '720x1280', '640x480', '480x800', '400x240', '320x240', '240x320']`
