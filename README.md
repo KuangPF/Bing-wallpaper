@@ -56,9 +56,12 @@ https://bing.com/HPImageArchive.aspx?format=js&idx=0&n=1
 
 ### 数据处理
 
-返回结果中img字段的url为图片地址一部分，加上必应的域名:`https://www.bing.com`,
-然后壁纸地址为: `https://www.bing.com/az/hprichbg/rb/SibeliusMonument_ZH-CN8903164725_1920x1080.jpg`
+返回结果中 `img` 字段的 url 为图片地址一部分，完整的图片地址需加上必应的域名:`https://www.bing.com`, 以上面请求为例，最终图片地址为：
 
-获取不同分辨率的壁纸，只需将ulr中对应的分辨率替换即可，支持的分辨率从如下：
+``` 
+https://www.bing.com/az/hprichbg/rb/SibeliusMonument_ZH-CN8903164725_1920x1080.jpg
+```
+
+获取不同分辨率的壁纸，只需将 url 中对应的分辨率替换即可，支持的分辨率从如下：
 
 `['1920x1080', '1280x768', '1366x768', '1024x768', '800x600', '800x480', '720x1280', '640x480', '480x800', '400x240', '320x240', '240x320']`
