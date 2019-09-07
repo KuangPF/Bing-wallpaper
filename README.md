@@ -1,5 +1,7 @@
 # bing-wallpaper
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+
 ### 安装依赖
 
 ``` bash 
